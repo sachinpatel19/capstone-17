@@ -17,6 +17,6 @@ while True:
         if not io.input(reed_switch_pin):
             ++pedals
             print("Reed switch detected")
-        if pedals >= 5:
-            print("Starting display...")
-            return True
+    if pedals >= 5:
+        print("Starting display...")
+        return True
