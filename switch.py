@@ -17,7 +17,7 @@ while True:
     while time.time() <= future:
         if not io.input(reed_switch_pin):
             ++pedals
-            print("Reed switch detected")
+            print("Number of pedals " + pedals)
     if pedals >= 5:
         print("Starting display...")
         sys.exit(0)
