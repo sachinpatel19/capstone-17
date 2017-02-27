@@ -16,7 +16,7 @@ while True:
     future = now + 10
     while time.time() <= future:
         if not io.input(reed_switch_pin):
-            ++pedals
+            pedals += 1
             print("Number of pedals " + str(pedals))
     if pedals >= 5:
         print("Starting display...")
