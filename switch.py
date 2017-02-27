@@ -23,5 +23,5 @@ while True:
             startdisplay = True
             break
     if startdisplay:
-        print("Starting display...")
+        print("Starting video...")
         sys.exit(0)
