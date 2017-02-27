@@ -1,4 +1,5 @@
 import time
+import sys
 import RPi.GPIO as io
 io.setmode(io.BCM)
 
@@ -19,4 +20,4 @@ while True:
             print("Reed switch detected")
     if pedals >= 5:
         print("Starting display...")
-        return True
+        sys.exit(0)
