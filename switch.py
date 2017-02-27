@@ -11,6 +11,6 @@ while True:
     if io.input(door_pin):
         if x:
             print("Reed switch detected 1" )
-        else
+        else:
             print("Reed switch detected 2" )
     time.sleep(1)
