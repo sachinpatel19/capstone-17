@@ -22,6 +22,6 @@ while True:
             if pedals >= 5:
                 startdisplay = True
                 break
-    if startdisplay
+    if startdisplay:
         print("Starting display...")
         sys.exit(0)
