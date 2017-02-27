@@ -19,6 +19,9 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
-    if pedals >= 5:
+            if(pedals >= 5)
+                startdisplay = True
+                break
+    if startdisplay
         print("Starting display...")
         sys.exit(0)
