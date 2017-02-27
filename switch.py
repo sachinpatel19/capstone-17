@@ -13,7 +13,7 @@ while True:
     pedals = 0
     now = time.time()
     future = now + 10
-    while(time.time() <= future)
+    while time.time() <= future:
         if not io.input(reed_switch_pin):
             ++pedals
             print("Reed switch detected")
