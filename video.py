@@ -10,7 +10,7 @@ while True:
     os.system('killall omxplayer.bin')
     omxc = Popen(['omxplayer', '-b', movie1])
     while True:
-        if(time.time() >= future)
+        if time.time() >= future:
             os.system('killall omxplayer.bin')
             break;
 sys.exit(0);
