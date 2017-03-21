@@ -1,6 +1,7 @@
 import sys
 import os
 from subprocess import Popen
+import time
 
 movie1 = ("/home/pi/Videos/movie1.mp4")
 now = time.time()
