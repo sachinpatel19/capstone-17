@@ -25,3 +25,4 @@ while True:
     if startdisplay:
         print("Starting video...")
         sys.exit(0)
+
