@@ -12,6 +12,6 @@ while True:
     while True:
         if time.time() >= future:
             os.system('killall omxplayer.bin')
-            break;
+            break
 sys.exit(0);
 
