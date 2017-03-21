@@ -1,7 +1,7 @@
 import Rpi.GPIO as GPIO
 import sys
-import osfrom subprocess
-import Popen
+import os
+from subprocess import Popen
 
 movie1 = ("/home/pi/Videos/movie1.mp4")
 
