@@ -15,4 +15,4 @@ while True:
             os.system('killall omxplayer.bin')
             break
     break
-
+sys.exit(0)
