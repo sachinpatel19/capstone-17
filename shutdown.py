@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 #GPIO.setmode(GPIO.BOARD) # Set pin numbering to board numbering
 #GPIO.setup(10, GPIO.IN) # Setup pin 7 as an input
