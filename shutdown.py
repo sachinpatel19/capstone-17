@@ -20,4 +20,4 @@ while True: # Setup a while loop to wait for a button press
       #time.sleep(3)
       #os.system("sudo shutdown -h now") # Send shutdown command to os
       #break
-   time.sleep(1) # Allow a sleep time of 1 second to reduce CPU usage
+   time.sleep(0.5) # Allow a sleep time of 1 second to reduce CPU usage
