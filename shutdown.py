@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
-
+GPIO.cleanup()
 power_on_pin=14 #board pin = 7
 shutdown_switch_pin=15 #board pin = 11
 #This is to keep the raspberry pi on 
@@ -19,6 +19,7 @@ while True: # Setup a while loop to wait for a button press
       GPIO.output(power_on_pin,GPIO.LOW)
       print("shuting down in 2...1...")
       time.sleep(2)
+      GPIO.cleanup()
       os.system("sudo shutdown -h now") # Send shutdown command to os
       break
       time.sleep(1) # Allow a sleep time of 1 second to reduce CPU usage
