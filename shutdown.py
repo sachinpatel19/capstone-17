@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 
-power_on_pin=4 #board pin = 7
+power_on_pin=2 #board pin = 7
 shutdown_switch_pin=17 #board pin = 11
 #This is to keep the raspberry pi on 
 GPIO.setmode(GPIO.BCM)
