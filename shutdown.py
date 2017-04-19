@@ -3,10 +3,10 @@ import RPi.GPIO as GPIO
 import time
 import os
 GPIO.cleanup()
-power_on_pin=11 #board pin = 7
+power_on_pin=14 #board pin = 7
 #shutdown_switch_pin=17 #board pin = 11
 #This is to keep the raspberry pi on 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 #print("setting gpio pin to high\n")
 GPIO.setup(power_on_pin,GPIO.OUT)
 GPIO.output(power_on_pin,GPIO.HIGH)
@@ -16,6 +16,7 @@ GPIO.output(power_on_pin,GPIO.HIGH)
 #time.sleep(1)
 while True: # Setup a while loop to wait for a button press
    GPIO.output(power_on_pin,GPIO.HIGH)
+   
    #if GPIO.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
       #GPIO.output(power_on_pin,GPIO.LOW)
       #print("shuting down in 2...1...")
