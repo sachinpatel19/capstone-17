@@ -1,2 +1,2 @@
 #crontab entry
-@reboot sh /home/pi/repositories/capstone17/launcher.sh >/home/pi/logs/cronlog 2>&1
+@reboot sh /home/pi/capstone17/launcher.sh >/home/pi/logs/cronlog 2>&1
