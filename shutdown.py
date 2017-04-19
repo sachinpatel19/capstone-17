@@ -18,12 +18,5 @@ while True: # Setup a while loop to wait for a button press
    if GPIO.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
       print("pressed")
       GPIO.cleanup()
-      break
-      #GPIO.output(power_on_pin,GPIO.LOW)
-      #print("shuting down in 2...1...")
-      #time.sleep(2)
-      #GPIO.cleanup()
-      
-      # os.system("sudo shutdown -h now") # Send shutdown command to os
-      #break
-      #time.sleep(1) # Allow a sleep time of 1 second to reduce CPU usage
+      os.system("sudo shutdown -h now") # Send shutdown command to os
+   time.sleep(1) # Allow a sleep time of 1 second to reduce CPU usage
