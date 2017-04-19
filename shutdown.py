@@ -3,8 +3,8 @@ import RPi.GPIO as GPIO
 import time
 import os
 GPIO.cleanup()
-power_on_pin=14 #board pin = 7
-shutdown_switch_pin=15 #board pin = 11
+power_on_pin=4 #board pin = 7
+shutdown_switch_pin=17 #board pin = 11
 #This is to keep the raspberry pi on 
 GPIO.setmode(GPIO.BCM)
 print("setting gpio pin to high\n")
