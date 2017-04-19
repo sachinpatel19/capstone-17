@@ -21,7 +21,7 @@ while True: # Setup a while loop to wait for a button press
       #print("shuting down in 2...1...")
       #time.sleep(2)
       #GPIO.cleanup()
-      print("shuting down")
+      #print("shuting down")
       # os.system("sudo shutdown -h now") # Send shutdown command to os
       #break
       #time.sleep(1) # Allow a sleep time of 1 second to reduce CPU usage
