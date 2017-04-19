@@ -17,6 +17,8 @@ GPIO.setup(shutdown_switch_pin, GPIO.IN)
 while True: # Setup a while loop to wait for a button press
    if not GPIO.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
       print("pressed")
+      GPIO.cleanup()
+      break
       #GPIO.output(power_on_pin,GPIO.LOW)
       #print("shuting down in 2...1...")
       #time.sleep(2)
