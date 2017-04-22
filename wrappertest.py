@@ -1,7 +1,7 @@
 from omxplayer import OMXPlayer
 from time import sleep
 
-file_path_or_url = 'path/to/file.mp4'
+file_path_or_url = '/home/pi/Videos/movie1.mp4'
 
 # This will start an `omxplayer` process, this might
 # fail the first time you run it, currently in the
