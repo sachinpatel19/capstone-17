@@ -12,7 +12,7 @@ player = OMXPlayer(file_path_or_url)
 
 player.play()
 sleep(10)
-#player.pause()
+player.pause()
 
 # Kill the `omxplayer` process gracefully.
-#player.quit()
+player.quit()
