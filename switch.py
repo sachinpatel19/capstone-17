@@ -1,14 +1,13 @@
 import time
 import sys
 import RPi.GPIO as io
+
 io.setmode(io.BCM)
 
-reed_switch_pin = 2
+reed_switch_pin = 26
 startdisplay = False
 
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
-
-
 
 while True:
     pedals = 0
