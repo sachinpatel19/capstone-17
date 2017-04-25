@@ -1,2 +1,2 @@
 #!/bin/sh
-mkfifo omfifo
+mkfifo pipeline
