@@ -2,7 +2,7 @@ import os
 import subprocess
 from sys import argv
 
-subprocess.call('rm','/tmp/pipeline')
+subprocess.call('rm /tmp/pipeline')
 os.mkfifo("/tmp/pipeline")
 
 
