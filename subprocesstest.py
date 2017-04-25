@@ -6,7 +6,7 @@ from sys import argv
 
 
 #subprocess.call(['chmod', '+x', 'mkfifoscript.sh'])
-#subprocess.call(['./mkfifoscript.sh'])
+subprocess.call('./play.sh')
 #subprocess.call('omxplayer -o hdmi $* < /tmp/pipeline &')
 
 print "opening file"
