@@ -17,9 +17,7 @@ while True:
     now = time.time()
     future = now + 30
     shutdowntime = now + 100
-    if time.time() >= shutdowntime:
-        io.cleanup()
-        os.system("sudo shutdown -h now")
+
     while time.time() <= future:
         if not io.input(reed_switch_pin):
             pedals += 1
@@ -34,6 +32,9 @@ while True:
             startdisplay = True
             shutdowntime = now + 100
             break
+        if time.time() >= shutdowntime:
+            io.cleanup()
+            os.system("sudo shutdown -h now")
             
     if startdisplay:
         if not videorunning:
