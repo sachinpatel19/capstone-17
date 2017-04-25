@@ -22,6 +22,9 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
+            while True:
+                if io.input(reed_switch_pin):
+                    break
             # todo: if reed switch continuously on, don't do anything
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
