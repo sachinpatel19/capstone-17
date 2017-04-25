@@ -27,9 +27,9 @@ shutdowntime = shutdownnow + 300
 # do this continuously till shutdown
 while True:
     #check if button was pressed to shutdown
-    if GPIO.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
+    if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
       print("pressed")
-      GPIO.cleanup()
+      io.cleanup()
       os.system("sudo shutdown -h now") # Send shutdown command to os
    
     # initialize variables
