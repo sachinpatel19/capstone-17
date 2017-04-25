@@ -2,7 +2,7 @@ import os
 import subprocess
 from sys import argv
 
-os.mkfifo("/tmp/pipeline")
+#os.mkfifo("/tmp/pipeline")
 
 
 #subprocess.call(['chmod', '+x', 'mkfifoscript.sh'])
