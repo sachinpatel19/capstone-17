@@ -27,8 +27,6 @@ while True:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
             break
-        else:
-            startdisplay = False
             
     if startdisplay:
         if not videorunning:
@@ -37,7 +35,7 @@ while True:
         if videopaused:
             myprocess.stdin.write('p')
     elif videorunning:
-        myprocess.stdin.write('q')
+        myprocess.stdin.write('p')
         videopaused = True
    
     
