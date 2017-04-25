@@ -5,8 +5,6 @@ import RPi.GPIO as io
 from omxplayer import OMXPlayer
 import os
 
-#movie1 = ("/home/pi/Videos/movie1.mp4")
-
 reed_switch_pin = 26 # board pin 39 , bcm 26
 videorunning = False
 videopaused = False
