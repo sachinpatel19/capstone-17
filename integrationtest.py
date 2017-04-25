@@ -34,6 +34,7 @@ while True:
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
+            shutdowntime = now + 100
             break
             
     if startdisplay:
