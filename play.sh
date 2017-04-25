@@ -1,2 +1,2 @@
 #!/bin/sh
-omxplayer -o hdmi $* < /tmp/pipeline &
+omxplayer -o hdmi "$*" < /tmp/pipeline &
