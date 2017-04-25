@@ -25,10 +25,6 @@ while True:
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
-        else:
-            # setting display to false, if the amount of pedals is lesss than  5 in 15 seconds
-            startdisplay = False
-            break
             
     if startdisplay:
         print "start video"
