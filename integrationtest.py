@@ -16,7 +16,7 @@ while True:
     startdisplay = False
     now = time.time()
     future = now + 30
-    shutdowntime = now + 100
+    shutdowntime = now + 60
 
     while time.time() <= future:
         if not io.input(reed_switch_pin):
@@ -30,7 +30,7 @@ while True:
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
-            shutdowntime = now + 100
+            shutdowntime = now + 60
             break
         if time.time() >= shutdowntime:
             io.cleanup()
