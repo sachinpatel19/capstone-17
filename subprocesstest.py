@@ -7,7 +7,7 @@ os.mkfifo("/tmp/pipeline")
 subprocess.call(['rm','/tmp/pipeline'])
 #subprocess.call(['chmod', '+x', 'mkfifoscript.sh'])
 #subprocess.call(['./mkfifoscript.sh'])
-subprocess.call(['omxplayer', '-o', 'hdmi', '"$*"', '<' '/tmp/pipeline', '&'])
+subprocess.call(['omxplayer', '-o', 'hdmi', '$*', '<' '/tmp/pipeline', '&'])
 
 print "opening file"
 target = open("/tmp/pipeline", 'w')
