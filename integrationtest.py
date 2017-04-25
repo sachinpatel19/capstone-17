@@ -5,6 +5,8 @@ import RPi.GPIO as io
 from omxplayer import OMXPlayer
 import os
 
+
+
 reed_switch_pin = 26 # board pin 39 , bcm 26
 videorunning = False
 videopaused = False
@@ -14,9 +16,11 @@ io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with 
 # set shutdown time to five minutes from now
 shutdownnow = time.time()
 shutdowntime = shutdownnow + 300
+# todo: show an image saying 'start pedaling' 
 
 # do this continuously till shutdown
 while True:
+   
     # initialize variables
     pedals = 0
     startdisplay = False
@@ -63,6 +67,3 @@ while True:
         videopaused = True
     # sleep to let the cpu rest
     time.sleep(0.5)
-
-    
-
