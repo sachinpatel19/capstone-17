@@ -10,5 +10,4 @@ target = open("pipeline", 'w')
 #subprocess.call(['echo', '-n', '/home/pi/Videos/movie1.mp4', '>', './pipeline'])
 print "writing to file"
 target.write("/home/pi/Videos/movie1.mp4")
-target.write("\n")
 
