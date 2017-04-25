@@ -14,9 +14,11 @@ io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with 
 
 while True:
     pedals = 0
+    startdisplay = False
     now = time.time()
     future = now + 15
     while time.time() <= future:
+        
         if not io.input(reed_switch_pin):
             pedals += 1
             print("Number of pedals " + str(pedals))
@@ -25,16 +27,16 @@ while True:
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
+            break
+        
             
     if startdisplay:
         myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
         videorunning = True
-        time.sleep(10)
-        myprocess.stdin.write('p')
-        time.sleep(5)
-        myprocess.stdin.write('q')
+
+#        myprocess.stdin.write('q')
     else:
-        print "pause video"
+        myprocess.stdin.write('p')
    
     
         # start video
@@ -44,9 +46,11 @@ while True:
         #omxc = Popen(['omxplayer', '-b', movie1])
     #else:
         
-    # if every 15 second, 5 revolution, then keep it on other wise kill it
+    # if every 15 second, 5 revolution, then keep it ON otherwise pause it
     # after 5 revolution reset the time
-    
+   
+
+    # after 5 minutes of doing nothing kill the system
     
     # shutdown system after 5 minutes, shut down the pi 
     
