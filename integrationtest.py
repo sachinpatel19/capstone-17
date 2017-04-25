@@ -23,14 +23,24 @@ while True:
             time.sleep(0.5)
             # todo: if reed switch continuously on, don't do anything
         if pedals >= 5:
+            # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
         else:
+            # setting display to false, if the amount of pedals is lesss than  5 in 15 seconds
             startdisplay = False
             break
+            
     if startdisplay:
-        print("Starting video...")
-        os.system('killall omxplayer.bin')
-        omxc = Popen(['omxplayer', '-b', movie1])
+        print "start video"
+    else:
+        print "pause video"
+   
+    
+        # start video
+        # stop video
+        #print("Starting video...")
+        #os.system('killall omxplayer.bin')
+        #omxc = Popen(['omxplayer', '-b', movie1])
     #else:
         
     # if every 15 second, 5 revolution, then keep it on other wise kill it
