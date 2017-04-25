@@ -15,9 +15,9 @@ videorunning = False
 videopaused = False
 io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
-io.setup(power_on_pin,GPIO.OUT)
-io.output(power_on_pin,GPIO.HIGH)
-io.setup(shutdown_switch_pin, GPIO.IN)
+io.setup(power_on_pin,io.OUT)
+io.output(power_on_pin,io.HIGH)
+io.setup(shutdown_switch_pin, io.IN)
 
 # set shutdown time to five minutes from now
 shutdownnow = time.time()
