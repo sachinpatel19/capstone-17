@@ -12,7 +12,7 @@ io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
 
 shutdownnow = time.time()
-shutdowntime = shutdownnow + 60
+shutdowntime = shutdownnow + 300
 while True:
     pedals = 0
     startdisplay = False
@@ -30,7 +30,7 @@ while True:
         if pedals >= 5:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
-            shutdowntime = now + 60
+            shutdowntime = now + 300
             break
         if time.time() >= shutdowntime:
             io.cleanup()
