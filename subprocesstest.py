@@ -5,7 +5,7 @@ from sys import argv
 #os.mkfifo("/tmp/pipeline")
 
 
-#subprocess.call(['chmod', '+x', 'mkfifoscript.sh'])
+subprocess.call(['chmod', '+x', 'play.sh'])
 subprocess.call('./play.sh')
 #subprocess.call('omxplayer -o hdmi $* < /tmp/pipeline &')
 
