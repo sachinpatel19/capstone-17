@@ -1,4 +1,4 @@
-
+import subprocess
 import time
 import sys
 import RPi.GPIO as io
@@ -8,7 +8,7 @@ from omxplayer import OMXPlayer
 
 reed_switch_pin = 26 # board pin 39 , bcm 26
 startdisplay = False
-
+videorunning = False
 io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
 
@@ -27,7 +27,8 @@ while True:
             startdisplay = True
             
     if startdisplay:
-        print "start video"
+        myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
+        videorunning = True
     else:
         print "pause video"
    
