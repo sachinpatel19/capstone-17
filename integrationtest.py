@@ -16,7 +16,7 @@ while True:
     pedals = 0
     startdisplay = False
     now = time.time()
-    future = now + 15
+    future = now + 30
     while time.time() <= future:
         if not io.input(reed_switch_pin):
             pedals += 1
