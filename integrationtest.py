@@ -9,6 +9,7 @@ from omxplayer import OMXPlayer
 reed_switch_pin = 26 # board pin 39 , bcm 26
 startdisplay = False
 videorunning = False
+videopaused = False
 io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
 
@@ -31,12 +32,16 @@ while True:
         
             
     if startdisplay:
-        myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
-        videorunning = True
-
+        if not videorunning:
+            myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
+            videorunning = True
+        if videopaused:
+            myprocess.stdin.write('p')
+        
 #        myprocess.stdin.write('q')
     else:
         myprocess.stdin.write('p')
+        videopaused = True
    
     
         # start video
