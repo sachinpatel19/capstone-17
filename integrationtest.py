@@ -34,7 +34,8 @@ while True:
             videorunning = True
         if videopaused:
             myprocess.stdin.write('p')
-    elif videorunning:
+            videopaused = False
+    elif videorunning and not videopaused:
         myprocess.stdin.write('p')
         videopaused = True
    
