@@ -8,10 +8,16 @@ import os
 
 
 reed_switch_pin = 26 # board pin 39 , bcm 26
+power_on_pin=14 #board pin = 8
+shutdown_switch_pin=17 #board pin = 11
+
 videorunning = False
 videopaused = False
 io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
+io.setup(power_on_pin,GPIO.OUT)
+io.output(power_on_pin,GPIO.HIGH)
+io.setup(shutdown_switch_pin, GPIO.IN)
 
 # set shutdown time to five minutes from now
 shutdownnow = time.time()
@@ -20,6 +26,11 @@ shutdowntime = shutdownnow + 300
 
 # do this continuously till shutdown
 while True:
+    #check if button was pressed to shutdown
+    if GPIO.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
+      print("pressed")
+      GPIO.cleanup()
+      os.system("sudo shutdown -h now") # Send shutdown command to os
    
     # initialize variables
     pedals = 0
