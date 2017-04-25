@@ -13,7 +13,7 @@ print "opening file"
 target = open("/tmp/pipeline", 'w')
 #subprocess.call('echo -n /home/pi/Videos/movie1.mp4 > /tmp/pipeline')
 #print "writing to file"
-target.write("/home/pi/Videos/movie1.mp4")
+target.write("home/pi/Videos/movie1.mp4")
 target.write("\n")
 
 
