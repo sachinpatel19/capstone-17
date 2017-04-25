@@ -11,13 +11,13 @@ videopaused = False
 io.setmode(io.BCM)
 io.setup(reed_switch_pin, io.IN, pull_up_down=io.PUD_UP)  # activate input with PullUp
 
+shutdownnow = time.time()
+shutdowntime = shutdownnow + 60
 while True:
     pedals = 0
     startdisplay = False
     now = time.time()
     future = now + 30
-    shutdowntime = now + 60
-
     while time.time() <= future:
         if not io.input(reed_switch_pin):
             pedals += 1
