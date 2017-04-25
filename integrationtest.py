@@ -7,7 +7,6 @@ from omxplayer import OMXPlayer
 #movie1 = ("/home/pi/Videos/movie1.mp4")
 
 reed_switch_pin = 26 # board pin 39 , bcm 26
-startdisplay = False
 videorunning = False
 videopaused = False
 io.setmode(io.BCM)
@@ -19,7 +18,6 @@ while True:
     now = time.time()
     future = now + 15
     while time.time() <= future:
-        
         if not io.input(reed_switch_pin):
             pedals += 1
             print("Number of pedals " + str(pedals))
@@ -29,7 +27,8 @@ while True:
             # setting start display to true if amound of pedals is greater than 5 in 15 seconds
             startdisplay = True
             break
-        
+        else:
+            startdisplay = False
             
     if startdisplay:
         if not videorunning:
@@ -37,10 +36,8 @@ while True:
             videorunning = True
         if videopaused:
             myprocess.stdin.write('p')
-        
-#        myprocess.stdin.write('q')
     else:
-        myprocess.stdin.write('p')
+        myprocess.stdin.write('q')
         videopaused = True
    
     
