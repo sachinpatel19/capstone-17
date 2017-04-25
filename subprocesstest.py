@@ -3,7 +3,7 @@ from sys import argv
 
 subprocess.call(['rm','./pipeline'])
 subprocess.call(['chmod', '+x', 'mkfifoscript.sh'])
-subprocess.call(['./mkfifoscript.sh'])
+
 
 print "opening file"
 target = open("pipeline", 'w')
@@ -11,4 +11,4 @@ target = open("pipeline", 'w')
 print "writing to file"
 target.write("/home/pi/Videos/movie1.mp4")
 target.write("\n")
-
+subprocess.call(['./mkfifoscript.sh'])
