@@ -3,6 +3,7 @@ import time
 import sys
 import RPi.GPIO as io
 from omxplayer import OMXPlayer
+import os
 
 #movie1 = ("/home/pi/Videos/movie1.mp4")
 
@@ -17,6 +18,10 @@ while True:
     startdisplay = False
     now = time.time()
     future = now + 30
+    shutdowntime = now + 100
+    if time.time() >= shutdowntime:
+        io.cleanup()
+        os.system("sudo shutdown -h now")
     while time.time() <= future:
         if not io.input(reed_switch_pin):
             pedals += 1
@@ -41,20 +46,9 @@ while True:
     elif videorunning and not videopaused:
         myprocess.stdin.write('p')
         videopaused = True
-   
+    time.sleep(0.5)
     
-        # start video
-        # stop video
-        #print("Starting video...")
-        #os.system('killall omxplayer.bin')
-        #omxc = Popen(['omxplayer', '-b', movie1])
-    #else:
-        
-    # if every 15 second, 5 revolution, then keep it ON otherwise pause it
-    # after 5 revolution reset the time
-   
 
-    # after 5 minutes of doing nothing kill the system
     
     # shutdown system after 5 minutes, shut down the pi 
     
