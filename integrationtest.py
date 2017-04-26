@@ -32,7 +32,7 @@ while True:
     
     # set the variable now to be used for checking pedals
     now = time.time()
-    future = now + 10
+    future = now + 5
     
     # if now time is less than or equal to future
     while time.time() <= future:
@@ -48,7 +48,7 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
-            contpausetime = time.time() + 10
+            contpausetime = time.time() + 5
             while time.time() < contpausetime:
                if io.input(reed_switch_pin):
                   break;
