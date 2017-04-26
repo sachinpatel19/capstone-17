@@ -27,6 +27,7 @@ while True:
    
     # initialize variables
     pedals = 0
+    prev_input = 0
     startdisplay = False
     
     # set the variable now to be used for checking pedals
@@ -42,12 +43,14 @@ while True:
             os.system("sudo shutdown -h now") # Send shutdown command to os
         
         # increment pedals for each input to reed switch
-        if not io.input(reed_switch_pin):
+        input = io.input(reed_switch_pin);
+        if (not input) and prev:
             pedals += 1
             print("Number of pedals " + str(pedals))
+            prev_input = input
             time.sleep(0.5)
-            conttime = time.time()
-            #if reed switch continuously on, don't do anything
+
+         
         # if detected enough pedals
         if pedals >= 5:
             # setting start display to true if amount of pedals is greater than 5 in 15 seconds
