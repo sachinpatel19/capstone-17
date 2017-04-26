@@ -47,6 +47,8 @@ while True:
          
         if (not input) and prev_input:
             print input
+            print prev_input
+            
             pedals += 1
             print("Number of pedals " + str(pedals))
             prev_input = input
