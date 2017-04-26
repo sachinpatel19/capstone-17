@@ -32,7 +32,7 @@ while True:
     
     # set the variable now to be used for checking pedals
     now = time.time()
-    future = now + 8
+    future = now + 10
     
     # if now time is less than or equal to future
     while time.time() <= future:
@@ -48,7 +48,7 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
-            contpausetime = time.time() + 8
+            contpausetime = time.time() + 10
             while time.time() < contpausetime:
                # this is repeated code but idc
                if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
