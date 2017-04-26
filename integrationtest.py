@@ -48,7 +48,8 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
-            while True:
+            contpausetime = time.time() + 10
+            while time.time() < contpausetime:
                if io.input(reed_switch_pin):
                   break;
          # need to add code to see if there is continous signal to reed switch, 
@@ -68,7 +69,8 @@ while True:
             io.cleanup()
             os.system("sudo shutdown -h now")
     # if start display flag is set     
-    if startdisplay:
+    
+      if startdisplay:
         # if video is not running, kick off an new omxplayer instance
         if not videorunning:
             myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
@@ -78,7 +80,7 @@ while True:
             myprocess.stdin.write('p')
             videopaused = False
     # if video was kicked off once, and it's not paused, and if startdisplay is set to false, pause the video
-    elif videorunning and not videopaused:
+      elif videorunning and not videopaused:
         myprocess.stdin.write('p')
         videopaused = True
     # sleep to let the cpu rest
