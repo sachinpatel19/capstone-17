@@ -69,19 +69,19 @@ while True:
             io.cleanup()
             os.system("sudo shutdown -h now")
     # if start display flag is set     
-    
-      if startdisplay:
-        # if video is not running, kick off an new omxplayer instance
-        if not videorunning:
-            myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
-            videorunning = True
-        # if video is only paused, play it back again
-        if videopaused:
-            myprocess.stdin.write('p')
-            videopaused = False
+
+   if startdisplay:
+      # if video is not running, kick off an new omxplayer instance
+      if not videorunning:
+      myprocess = subprocess.Popen(['omxplayer','-b','/home/pi/Videos/movie1.mp4'],stdin=subprocess.PIPE)
+      videorunning = True
+      # if video is only paused, play it back again
+      if videopaused:
+         myprocess.stdin.write('p')
+         videopaused = False
     # if video was kicked off once, and it's not paused, and if startdisplay is set to false, pause the video
-      elif videorunning and not videopaused:
-        myprocess.stdin.write('p')
-        videopaused = True
+   elif videorunning and not videopaused:
+      myprocess.stdin.write('p')
+      videopaused = True
     # sleep to let the cpu rest
-    time.sleep(0.5)
+   time.sleep(0.5)
