@@ -44,17 +44,15 @@ while True:
         
         # increment pedals for each input to reed switch
         input = not io.input(reed_switch_pin)
-         
-        if (input and (not prev_input)):
-            print input
-            print prev_input
+        if (input):
             pedals += 1
             print("Number of pedals " + str(pedals))
-            prev_input = not input
-            print prev_input
             time.sleep(0.5)
-
-         
+         # need to add code to see if there is continous signal to reed switch, 
+         #then pause the video if there is continuous signla to reed switch
+         pausetime = time.time()+5
+         while not io.input and time.time() <= pausetime:
+            
         # if detected enough pedals
         if pedals >= 5:
             # setting start display to true if amount of pedals is greater than 5 in 15 seconds
