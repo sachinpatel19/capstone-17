@@ -50,6 +50,15 @@ while True:
             time.sleep(0.5)
             contpausetime = time.time() + 5
             while time.time() < contpausetime:
+               # this is repeated code but idc
+               if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
+                  print("pressed")
+                  io.cleanup()
+                  os.system("sudo shutdown -h now") # Send shutdown command to os
+               # if shutdown time greater than or equal to now, cleanup and shutdown
+               if time.time() >= shutdowntime:
+                  io.cleanup()
+                  os.system("sudo shutdown -h now")   
                if io.input(reed_switch_pin):
                   break;
          # need to add code to see if there is continous signal to reed switch, 
