@@ -5,8 +5,6 @@ import RPi.GPIO as io
 from omxplayer import OMXPlayer
 import os
 
-
-
 reed_switch_pin = 26 # board pin 39 , bcm 26
 power_on_pin=14 #board pin = 8
 shutdown_switch_pin=17 #board pin = 11
@@ -49,7 +47,7 @@ while True:
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
             #if reed switch continuously on, don't do anything
-            while True:
+            while time.time() <= future:
                 if io.input(reed_switch_pin):
                     break
         # if detected enough pedals
