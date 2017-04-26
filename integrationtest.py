@@ -51,7 +51,7 @@ while True:
             
             pedals += 1
             print("Number of pedals " + str(pedals))
-            prev_input = input
+            prev_input = not input
             time.sleep(0.5)
 
          
