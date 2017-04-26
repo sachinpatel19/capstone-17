@@ -53,8 +53,8 @@ while True:
                   break;
          # need to add code to see if there is continous signal to reed switch, 
          #then pause the video if there is continuous signla to reed switch
-         pausetime = time.time()+5
-         while not io.input and time.time() <= pausetime:
+         #pausetime = time.time()+5
+         #while not io.input and time.time() <= pausetime:
             
         # if detected enough pedals
         if pedals >= 5:
