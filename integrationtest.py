@@ -48,6 +48,9 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
+            while True:
+               if io.input(reed_switch_pin):
+                  break;
          # need to add code to see if there is continous signal to reed switch, 
          #then pause the video if there is continuous signla to reed switch
          pausetime = time.time()+5
