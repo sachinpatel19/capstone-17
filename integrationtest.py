@@ -27,7 +27,7 @@ while True:
    
     # initialize variables
     pedals = 0
-    prev_input = 1
+    prev_input = 0
     startdisplay = False
     
     # set the variable now to be used for checking pedals
