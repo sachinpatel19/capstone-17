@@ -46,8 +46,9 @@ while True:
             pedals += 1
             print("Number of pedals " + str(pedals))
             time.sleep(0.5)
+            conttime = time.time()
             #if reed switch continuously on, don't do anything
-            while time.time() <= future:
+            while time.time() <= cont + 1:
                 if io.input(reed_switch_pin):
                     break
         # if detected enough pedals
