@@ -48,9 +48,6 @@ while True:
             time.sleep(0.5)
             conttime = time.time()
             #if reed switch continuously on, don't do anything
-            while time.time() <= cont + 1:
-                if io.input(reed_switch_pin):
-                    break
         # if detected enough pedals
         if pedals >= 5:
             # setting start display to true if amount of pedals is greater than 5 in 15 seconds
