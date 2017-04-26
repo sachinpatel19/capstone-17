@@ -31,7 +31,7 @@ while True:
     
     # set the variable now to be used for checking pedals
     now = time.time()
-    future = now + 30
+    future = now + 10
     
     # if now time is less than or equal to future
     while time.time() <= future:
