@@ -45,7 +45,7 @@ while True:
         # increment pedals for each input to reed switch
         input = not io.input(reed_switch_pin)
          
-        if input and (not prev_input):
+        if (input and (not prev_input)):
             print input
             print prev_input
             pedals += 1
