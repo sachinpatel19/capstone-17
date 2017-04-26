@@ -43,7 +43,6 @@ while True:
             os.system("sudo shutdown -h now") # Send shutdown command to os
         
         # increment pedals for each input to reed switch
-        print "reading reed switch input"
         input = io.input(reed_switch_pin);
          
         if (not input) and prev_input:
