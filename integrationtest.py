@@ -34,12 +34,13 @@ while True:
     now = time.time()
     future = now + 10
             #check if button was pressed to shutdown
-    if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
-         print("pressed")
-         io.cleanup()
-         os.system("sudo shutdown -h now") # Send shutdown command to os
-    # if now time is less than or equal to future
+       # if now time is less than or equal to future
     while time.time() <= future:
+       if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
+            print("pressed")
+            io.cleanup()
+            os.system("sudo shutdown -h now") # Send shutdown command to os
+
         # increment pedals for each input to reed switch
         input = not io.input(reed_switch_pin)
         if (input):
