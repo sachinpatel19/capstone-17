@@ -20,7 +20,7 @@ io.setup(shutdown_switch_pin, io.IN)
 # set shutdown time to five minutes from now
 shutdownnow = time.time()
 shutdowntime = shutdownnow + 300
-# todo: show an image saying 'start pedaling' 
+
 
 # do this continuously till shutdown
 while True:
@@ -32,7 +32,7 @@ while True:
     # set the variable now to be used for checking pedals
     now = time.time()
     future = now + 10
-            #check if button was pressed to shutdown
+
        # if now time is less than or equal to future
     while time.time() <= future:
         if io.input(shutdown_switch_pin): # Setup an if loop to run a shutdown command when button press sensed
