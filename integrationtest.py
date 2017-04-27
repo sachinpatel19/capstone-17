@@ -79,7 +79,7 @@ while True:
     if startdisplay:
       # if video is not running, kick off an new omxplayer instance
       if not videorunning:
-         myprocess = subprocess.Popen(['omxplayer','-b','/media/pi/BRIDGEWELL1/movie1.mp4'],stdin=subprocess.PIPE)
+         myprocess = subprocess.Popen(['omxplayer','--loop','/media/pi/BRIDGEWELL1/movie1.mp4'],stdin=subprocess.PIPE)
          videorunning = True
       # if video is only paused, play it back again
       if videopaused:
